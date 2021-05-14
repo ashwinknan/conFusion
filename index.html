@@ -28,8 +28,9 @@
                     <li class ="nav-item"><a class = "nav-link" href ="#"><span class = "fa fa-list"></span> Menu</a></li>
                     <li class ="nav-item"><a class = "nav-link" href ="./contactus.html"><span class = "fa fa-address-card"></span> Contact</a></li>
                 </ul>
+<!--Login Button for Javascript Targeting-->
                 <span class = "navbar-text">
-                    <a data-toggle = "modal" data-target = "#loginModal">
+                    <a id = "loginbutton" role = "button">
                         <span class = "fa fa-sign-in"> Login</span>
                     </a>
                 </span>
@@ -43,7 +44,7 @@
             <div class = "modal-content">
                 <div class = "modal-header">
                     <h4 class = "modal-title">Member Login</h4>
-                    <button type = "button" class= "close" data-dismiss = "modal"></button>
+                    <button type = "button" class= "close fa" data-dismiss = "modal">&times;</button>
                 </div>
                 <div class = "modal-body">
                     <form>
@@ -161,8 +162,9 @@
                 <div class ="col-12 col-sm-3">
                     <img src = "./img/logo.png" class = "img-fluid">
                 </div>
+                <!--Reserve Table Button for Javascript Targeting-->
                 <div class ="col-12 col-sm-3">
-                    <a id = "reservebutton"  class ="btn btn-warning btn-sm btn-block align-self-center" role = "button" data-toggle = "modal" data-target = "#reserveModal" style = "text-decoration: none">Reserve Table</a>
+                    <a id = "reservebutton"  class ="btn btn-warning btn-sm btn-block align-self-center" role = "button"  style = "text-decoration: none">Reserve Table</a>
                 </div>
             </div>
         </div>
@@ -343,9 +345,14 @@
                     $("#mycarousel").carousel('cycle');
                     $("#carousel-button").children('span').removeClass('fa-play').addClass('fa-pause');
 
-                 }
-                 
+                 } 
              });
+             $('#reservebutton').click(function(){
+                $('#reserveModal').modal('show');
+            });
+            $('#loginbutton').click(function(){
+                $('#loginModal').modal('show');
+            });
             
 
          });
